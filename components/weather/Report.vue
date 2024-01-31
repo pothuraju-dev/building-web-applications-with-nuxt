@@ -36,48 +36,6 @@ interface Props {
   coords: Geolocation
 }
 
-const testSample = {
-  "location": {
-    "name": "Patancheru",
-    "region": "Andhra Pradesh",
-    "country": "India",
-    "lat": 17.47,
-    "lon": 78.37,
-    "tz_id": "Asia/Kolkata",
-    "localtime_epoch": 1706729340,
-    "localtime": "2024-02-01 2:28"
-  },
-  "current": {
-    "last_updated_epoch": 1706728500,
-    "last_updated": "2024-02-01 00:45",
-    "temp_c": 21,
-    "temp_f": 69.8,
-    "is_day": 0,
-    "condition": {
-      "text": "Clear",
-      "icon": "//cdn.weatherapi.com/weather/64x64/night/113.png",
-      "code": 1000
-    },
-    "wind_mph": 5.6,
-    "wind_kph": 9,
-    "wind_degree": 100,
-    "wind_dir": "E",
-    "pressure_mb": 1017,
-    "pressure_in": 30.03,
-    "precip_mm": 0,
-    "precip_in": 0,
-    "humidity": 69,
-    "cloud": 0,
-    "feelslike_c": 21,
-    "feelslike_f": 69.8,
-    "vis_km": 6,
-    "vis_miles": 3,
-    "uv": 1,
-    "gust_mph": 15.3,
-    "gust_kph": 24.6
-  }
-}
-
 const props = defineProps<Props>()
 const data: Ref<WeatherData | undefined> = ref()
 
@@ -85,10 +43,9 @@ const fetchWeather = async (coords: Geolocation): Promise<WeatherData> => {
   const { latitude, longitude } = coords
   const q = `${latitude},${longitude}`
   try {
-    // const res = await useAsyncData('weatherData', () =>
-    //   $fetch(`/api/weather/${q}`)
-    // )
-    const res = {data: {value:testSample}, status:{value: 'success'}}
+    const res = await useAsyncData('weatherData', () =>
+      $fetch(`/api/weather/${q}`)
+    )
     // Check if the response is in the 'idle' state and refresh if necessary
 
     if (res.status.value === 'success') {
