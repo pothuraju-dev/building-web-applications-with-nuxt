@@ -27,5 +27,7 @@ onMounted(async () => {
 </script>
 <template>
   <div v-if="geolocationBlockedByUser">User denied access</div>
-  <WeatherReport v-if="coords" :coords="coords" />
+  <ClientOnly>
+    <WeatherReport v-if="coords" :coords="coords" />
+  </ClientOnly>
 </template>

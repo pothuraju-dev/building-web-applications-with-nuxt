@@ -61,24 +61,44 @@ const fetchWeather = async (coords: Geolocation): Promise<WeatherData> => {
   }
 }
 
-const formatDate = (dateString: Date): string =>{
-  const date = new Date(dateString);
+const formatDate = (dateString: Date): string => {
+  const date = new Date(dateString)
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl
-  return new Intl.DateTimeFormat("default",{
-    dateStyle:'long',
-    timeStyle:'short',
+  return new Intl.DateTimeFormat('default', {
+    dateStyle: 'long',
+    timeStyle: 'short',
   }).format(date)
+}
+
+const setStorage = (coords: Geolocation, data: WeatherData) => {
+  localStorage.setItem(
+    'weather',
+    JSON.stringify({ coords: JSON.stringify(coords), data })
+  )
+}
+
+const getStorage = (coords: Geolocation): WeatherData | undefined => {
+  const record = JSON.parse(localStorage.getItem('weather'))
+  if (!record) return
+  else {
+    if (record.coords === JSON.stringify(coords)) return record.data
+    else return
+  }
 }
 
 onMounted(() => {
   const { latitude, longitude } = props.coords || {}
   if (latitude !== undefined && longitude !== undefined) {
     ;(async () => {
-      const weatherResponse = await fetchWeather({
-        latitude,
-        longitude,
-      })
-      data.value = weatherResponse
+      if (getStorage(props.coords)) data.value = getStorage(props.coords)
+      else {
+        const weatherResponse = await fetchWeather({
+          latitude,
+          longitude,
+        })
+        data.value = weatherResponse
+        setStorage(props.coords, data.value)
+      }
     })()
   } else {
     console.error('Latitude or longitude is undefined.')
@@ -105,7 +125,7 @@ onMounted(() => {
         <p data-testid="localtime">{{ formatDate(data.location.localtime) }}</p>
         <p>
           Wind: {{ data.current.wind_kph }} kph
-          <WeatherWindDirection :degress="data.current.wind_degree"/>
+          <WeatherWindDirection :degress="data.current.wind_degree" />
         </p>
       </div>
     </article>
