@@ -30,6 +30,11 @@ const apps = [
     description: '',
     url: '/get-started/todo-list',
   },
+  {
+    name: 'Local Weather',
+    description: '',
+    url: '/get-started/local-weather',
+  },
   // TODO: Add more apps with relevant information
 ]
 </script>
