@@ -90,7 +90,7 @@ onMounted(() => {
   <div>
     <article
       v-if="data && data.current"
-      class="max-w-md w-96 rounded-lg shadow-lg p-4 flex bg-white text-black"
+      class="w-full rounded-lg shadow-lg p-4 flex bg-white text-black"
     >
       <div class="basis-1/4 text-left">
         <img :src="data.current.condition.icon" class="h-16 w-16" />
