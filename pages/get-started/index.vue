@@ -35,6 +35,11 @@ const apps = [
     description: '',
     url: '/get-started/local-weather',
   },
+  {
+    name: 'Marvel Comics Overview',
+    description: '',
+    url: '/get-started/marvel-comics',
+  },
   // TODO: Add more apps with relevant information
 ]
 </script>
