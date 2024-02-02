@@ -6,6 +6,10 @@ export default defineEventHandler(async (event) => {
 
   const requestURI = makeAuthenticatedAPICall(marvelSlug)
   // Create a function to fetch marvel information
+
+  // Todo: getPagination
+
+  // Todo: getQuery
   try {
     const response: any = await $fetch(requestURI)
     // Return the marvel data
