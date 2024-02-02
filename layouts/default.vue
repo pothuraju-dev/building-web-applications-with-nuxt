@@ -100,10 +100,11 @@
 // Array of navigation items with names and hrefs
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Get Started', href: '/get-started' },
+  { name: 'Apps', href: '/apps' },
+  { name: 'Components', href: '/components' },
   {
     name: 'Github',
-    href: 'https://github.com/pothuraju-dev/building-web-applications-with-nuxt',
+    href: 'https://github.com/sriram-500apps/building-web-applications-with-nuxt',
   },
 ]
 

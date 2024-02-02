@@ -1,4 +1,4 @@
-<!-- pages/get-started/todo-list.vue -->
+<!-- pages/apps/todo-list.vue -->
 
 <!-- Import necessary components or libraries -->
 

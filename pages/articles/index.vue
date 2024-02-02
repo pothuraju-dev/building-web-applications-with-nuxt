@@ -1,5 +1,3 @@
-<!-- pages/get-started/index.vue -->
-
 <template>
   <!-- Grid layout with two columns for app cards -->
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-1">

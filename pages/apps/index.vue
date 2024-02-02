@@ -1,4 +1,4 @@
-<!-- pages/get-started/index.vue -->
+<!-- pages/apps/index.vue -->
 
 <template>
   <!-- Grid layout with two columns for app cards -->
@@ -28,17 +28,17 @@ const apps = [
   {
     name: 'Todo List',
     description: '',
-    url: '/get-started/todo-list',
+    url: '/apps/todo-list',
   },
   {
     name: 'Local Weather',
     description: '',
-    url: '/get-started/local-weather',
+    url: '/apps/local-weather',
   },
   {
     name: 'Marvel Comics Overview',
     description: '',
-    url: '/get-started/marvel-comics',
+    url: '/apps/marvel-comics',
   },
   // TODO: Add more apps with relevant information
 ]
