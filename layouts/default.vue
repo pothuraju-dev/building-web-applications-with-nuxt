@@ -57,9 +57,9 @@
       </div>
 
       <!-- Content area with a max width of 2xl and padding -->
-      <div class="mx-auto max-w-2xl py-12">
+      <div class="mx-auto max-w-5xl py-12">
         <!-- Slot for Nuxt page content -->
-        <NuxtPage><slot></slot></NuxtPage>
+        <NuxtPage> </NuxtPage>
       </div>
 
       <!-- Additional decorative background element for the bottom part of the page -->
@@ -100,10 +100,11 @@
 // Array of navigation items with names and hrefs
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Get Started', href: '/get-started' },
+  { name: 'Apps', href: '/apps' },
+  { name: 'Components', href: '/components' },
   {
     name: 'Github',
-    href: 'https://github.com/pothuraju-dev/building-web-applications-with-nuxt',
+    href: 'https://github.com/sriram-500apps/building-web-applications-with-nuxt',
   },
 ]
 
