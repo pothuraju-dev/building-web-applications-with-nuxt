@@ -1,7 +1,8 @@
 <template>
   <div>
-    <LoadingIndicator
-      v-if="isSearching"
+    <Loaders
+      type="dots"
+      :is-loading="isSearching"
       :text="Searching by '${searchQuery}'..."
     />
     <div v-if="data && data.length > 0 && !isSearching && query">

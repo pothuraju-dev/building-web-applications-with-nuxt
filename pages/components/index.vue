@@ -30,6 +30,11 @@
       description: '',
       url: '/components/confettie',
     },
+    {
+      name: 'Loaders',
+      description: '',
+      url: '/components/loaders',
+    },
     // TODO: Add more apps with relevant information
   ]
   </script>
