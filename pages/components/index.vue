@@ -35,6 +35,11 @@
       description: '',
       url: '/components/loaders',
     },
+    {
+      name: 'tabs',
+      description: '',
+      url: '/components/tabs',
+    },
     // TODO: Add more apps with relevant information
   ]
   </script>
