@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-16 w-56 text-right">
+  <div class="w-56 text-right">
     <Menu as="div" class="relative inline-block text-left">
       <div>
         <MenuButton
@@ -28,6 +28,7 @@
           <div class="px-1 py-1" v-for="menu in items" :key="menu.label">
             <MenuItem v-slot="{ active }" v-if="typeof menu === 'object'">
               <button
+                @click="onMenuItemClick(menu)"
                 :class="[
                   active ? 'bg-violet-500 text-white' : 'text-gray-900',
                   'group flex w-full items-center rounded-md px-2 py-2 text-sm',
@@ -51,52 +52,7 @@
                 </MenuItem>
               </div>
             </div>
-            <!-- <MenuItem v-slot="{ active }">
-              <button
-                :class="[
-                  active ? 'bg-violet-500 text-white' : 'text-gray-900',
-                  'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-                ]"
-              >
-                Duplicate
-              </button>
-            </MenuItem> -->
           </div>
-          <!-- <div class="px-1 py-1">
-            <MenuItem v-slot="{ active }">
-              <button
-                :class="[
-                  active ? 'bg-violet-500 text-white' : 'text-gray-900',
-                  'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-                ]"
-              >
-                Archive
-              </button>
-            </MenuItem>
-            <MenuItem v-slot="{ active }">
-              <button
-                :class="[
-                  active ? 'bg-violet-500 text-white' : 'text-gray-900',
-                  'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-                ]"
-              >
-                Move
-              </button>
-            </MenuItem>
-          </div>
-
-          <div class="px-1 py-1">
-            <MenuItem v-slot="{ active }">
-              <button
-                :class="[
-                  active ? 'bg-violet-500 text-white' : 'text-gray-900',
-                  'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-                ]"
-              >
-                Delete
-              </button>
-            </MenuItem>
-          </div> -->
         </MenuItems>
       </transition>
     </Menu>
@@ -123,4 +79,9 @@ withDefaults(defineProps<Props>(), {
   label: '',
   items: () => [],
 })
+
+const onMenuItemClick = (menu: MenuItem) => {
+  console.log('menuItem', menu)
+  useRouter().push(menu.to)
+}
 </script>
