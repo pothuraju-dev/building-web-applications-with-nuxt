@@ -31,7 +31,7 @@
             'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
           ]"
         >
-         <slot name="panel" v-bind="{info: tab, index, idx}"></slot>
+         <slot name="panel" v-bind="{info: tab, index:idx}"></slot>
         </TabPanel>
       </TabPanels>
     </TabGroup>
