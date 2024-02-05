@@ -36,14 +36,19 @@ const apps = [
     url: '/components/loaders',
   },
   {
-    name: 'tabs',
+    name: 'Tabs',
     description: '',
     url: '/components/tabs',
   },
   {
-    name: 'modal',
+    name: 'Modal',
     description: '',
     url: '/components/modal',
+  },
+  {
+    name: 'Menu',
+    description: '',
+    url: '/components/menu',
   },
   // TODO: Add more apps with relevant information
 ]
