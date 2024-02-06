@@ -26,32 +26,17 @@
           class="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
         >
           <div class="px-1 py-1" v-for="menu in items" :key="menu.label">
-            <MenuItem v-slot="{ active }" v-if="typeof menu === 'object'">
+            <MenuItem v-slot="{ active }">
               <button
-                @click="onMenuItemClick(menu)"
                 :class="[
                   active ? 'bg-violet-500 text-white' : 'text-gray-900',
                   'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                 ]"
+                @click="onMenuItemClick(menu)"
               >
                 {{ menu.label }}
               </button>
             </MenuItem>
-            <div v-else>
-              <div v-for="item in menu" :key="item.label">
-                <MenuItem v-slot="{ active }" v-if="typeof menu === 'object'">
-                  <button
-                    :class="[
-                      active ? 'bg-violet-500 text-white' : 'text-gray-900',
-                      'group flex w-full items-center rounded-md px-2 py-2 text-sm',
-                    ]"
-                  >
-                    {{ item }}
-                    {{ item.label }}
-                  </button>
-                </MenuItem>
-              </div>
-            </div>
           </div>
         </MenuItems>
       </transition>
@@ -68,11 +53,9 @@ interface MenuItem {
   to: string
 }
 
-type MenuArray = MenuItem[]
-
 interface Props {
-  label: string
-  items?: (MenuArray | MenuItem)[]
+  label?: string
+  items?: MenuItem[]
 }
 
 withDefaults(defineProps<Props>(), {
@@ -80,8 +63,7 @@ withDefaults(defineProps<Props>(), {
   items: () => [],
 })
 
-const onMenuItemClick = (menu: MenuItem) => {
-  console.log('menuItem', menu)
+const onMenuItemClick = (menu: MenuItem) =>{
   useRouter().push(menu.to)
 }
 </script>
