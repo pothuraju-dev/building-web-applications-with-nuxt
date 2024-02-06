@@ -8,7 +8,6 @@ const data: Ref<Comic[] | undefined> = ref()
 const getComics = async () => {
   isLoading.value = true
   const comics = await useComics()
-  console.log('comics', comics)
   data.value = comics.results
   isLoading.value = false
 }

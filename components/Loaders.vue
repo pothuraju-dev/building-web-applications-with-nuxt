@@ -39,9 +39,6 @@ withDefaults(defineProps<Props>(), {
 })
 
 const loader = ref(null)
-onMounted(() => {
-  console.log('loader', loader)
-})
 </script>
 
 <style scoped lang="postcss">
