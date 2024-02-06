@@ -59,7 +59,7 @@
       <!-- Content area with a max width of 2xl and padding -->
       <div class="mx-auto max-w-5xl py-12">
         <!-- Slot for Nuxt page content -->
-        <NuxtPage> </NuxtPage>
+        <slot/>
       </div>
 
       <!-- Additional decorative background element for the bottom part of the page -->
