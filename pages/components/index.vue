@@ -50,6 +50,11 @@ const apps = [
     description: '',
     url: '/components/menu',
   },
+  {
+    name: 'Accordions',
+    description: '',
+    url: '/components/accordions',
+  },
   // TODO: Add more apps with relevant information
 ]
 </script>
