@@ -10,7 +10,7 @@ const fetchRecipe = async () => {
     // Todo: getPagination
   
     // Todo: getQuery
-    const apiKey = "2fbd78d6c37d4db9b22c6ded6a5dd86f"
+    const apiKey = localStorage.getItem('spoonacular-api-key')
   
     try {
       const {recipes} = await $fetch(
