@@ -4,14 +4,14 @@ import type { Recipe } from '~/types/spoonacular';
 definePageMeta({
   layout: 'spoonacular',
 })
-const comics = await $fetch(`/api/marvel/recipe`, {})
-console.log("comics", comics)
+const recipe = await $fetch(`/api/random-recipe`, {})
+console.log("recipe", recipe)
 
 </script>
 
 <template>
   <SpoonacularRecipesList />
   <ul>
-      {{ comics }}
+      {{ recipe.title }}
   </ul>
 </template>

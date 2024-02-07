@@ -1,20 +1,19 @@
-import { Recipe } from '~/types/spoonacular'
+import { makeAuthenticatedAPICall } from '~/server/utils/marvel'
 
 export default defineEventHandler(async (event) => {
   // Define your API endpoint for marvel information
-  const { spoonacularSlug } = getRouterParams(event)
+  const { marvelSlug } = getRouterParams(event)
 
-  const apiKey = process.env.APP_SPOONACULAR_API
-  const spoonacularAPI = 'https://api.spoonacular.com/recipes/random'
+  const requestURI = makeAuthenticatedAPICall(marvelSlug)
   // Create a function to fetch marvel information
 
   // Todo: getPagination
 
   // Todo: getQuery
   try {
-    const { recipes } = await $fetch(`${spoonacularAPI}/?apiKey=${apiKey}`) as {recipes: Recipe[]}
+    const response: any = await $fetch(requestURI)
     // Return the marvel data
-    return recipes[0]
+    return response
   } catch (error) {
     // Handle errors here
     console.error('Error fetching marvel:', error)
