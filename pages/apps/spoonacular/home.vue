@@ -4,9 +4,9 @@ import type { Recipe } from '~/types/spoonacular';
 definePageMeta({
   layout: 'spoonacular',
 })
-const recipe = await $fetch(`/api/spoonacular/recipes`, {})
+// const recipe = await $fetch(`/api/spoonacular/recipes`, {})
 const comics = await $fetch(`/api/marvel/comics`, {})
-console.log("recipe", recipe)
+// console.log("recipe", recipe)
 console.log("comics", comics)
 
 </script>
@@ -14,6 +14,6 @@ console.log("comics", comics)
 <template>
   <SpoonacularRecipesList />
   <ul>
-      {{ recipe }}
+      {{ comics }}
   </ul>
 </template>
