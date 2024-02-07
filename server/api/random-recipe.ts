@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
     return recipes[0]
   } catch (error) {
     // Handle errors here
-    console.error('Error fetching marvel:', error)
-    throw new Error('Failed to fetch marvel information')
+    console.error('Error fetching recipe:', error)
+    throw new Error('Failed to fetch recipe information')
   }
 })
