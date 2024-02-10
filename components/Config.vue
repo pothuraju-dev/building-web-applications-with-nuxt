@@ -39,7 +39,6 @@ export default defineComponent({
   name: 'AppConfiguration',
   setup() {
     const configStore = useConfigStore();
-    console.log("configStore", configStore)
 
     const marvelApiKey = ref(configStore.getMarvelApiKey);
     const spoonacularApiKey = ref(configStore.getSpoonacularApiKey);
