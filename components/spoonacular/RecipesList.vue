@@ -19,7 +19,7 @@ const addDays = (days: number): Date => {
 const recipes = [
   { id: 1, title: 'test', date: addDays(1) },
   { id: 2, title: 'test2', date: addDays(1) },
-  { id: 2, title: 'test3', date: addDays(-1) },
+  { id: 3, title: 'test3', date: addDays(-1) },
 ]
 
 const openPreview = (recipe: RecipeList): void => {
@@ -74,14 +74,14 @@ onMounted(() => {
   <div v-if="true">
     <Tabs :tabs="recipeTabs">
       <template #panel="{ info }">
-        <SpoonacularRecipeTable
+        <SpoonacularRecipeTable 
           :recipes="info.recipes"
           :title="info.title"
           @openPreview="openPreview"
         ></SpoonacularRecipeTable>
       </template>
     </Tabs>
-    <Modal :open="modalVisible" @close="closePreview">
+    <Modal v-if="selectedRecipe" :open="modalVisible" @close="closePreview">
       <template #title>Recipe Information</template>
       <SpoonacularCookingInstructions
         :id="selectedRecipe.id"

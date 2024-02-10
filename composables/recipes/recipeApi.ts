@@ -23,7 +23,7 @@ const getRequestURI = (path: string, query?: string): string => {
 
 export const useRecipeSearch = async (query: string): Promise<SearchRecipe> => {
   try {
-    return (await useRecipeAPI('recipes/search', { query })) as any
+    return (await useRecipeAPI('https://api.spoonacular.com/recipes/search', { query })) as any
   } catch {
     throw new Error('An eror occurred while trying to search recipes')
   }
@@ -31,11 +31,13 @@ export const useRecipeSearch = async (query: string): Promise<SearchRecipe> => {
 
 export const useRecipeInformation = async (id: string): Promise<Recipe> => {
   try {
-    return (await useRecipeAPI(
-      `/api/spoonacular/recipes/${id}/information`
+    return (await useFetch(
+      `https://api.spoonacular.com/recipes/${id}/information/?apiKey=${
+        useConfigStore().getSpoonacularApiKey
+      }`
     )) as any
   } catch {
-    throw new Error(
+    console.error(
       'An error occured while trying to retrieve recipe information'
     )
   }

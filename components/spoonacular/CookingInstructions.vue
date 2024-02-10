@@ -32,7 +32,7 @@ const accordions = {
   },
 }
 onMounted(() => {
-  getRecipeDetails(props.activePanel)
+  getRecipeDetails(props.id)
 })
 </script>
 <template>

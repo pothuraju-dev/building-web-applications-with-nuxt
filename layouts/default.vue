@@ -101,10 +101,10 @@
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Apps', href: '/apps' },
-  { name: 'Components', href: '/components' },
+  { name: 'Config Apps', href: '/config' },
   {
     name: 'Github',
-    href: 'https://github.com/sriram-500apps/building-web-applications-with-nuxt',
+    href: 'https://github.com/pothuraju-dev/building-web-applications-with-nuxt',
   },
 ]
 
