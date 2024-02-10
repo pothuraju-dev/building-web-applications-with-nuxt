@@ -27,7 +27,10 @@
     "@headlessui/vue": "^1.7.17",
     "@heroicons/vue": "^2.1.1",
     "@nuxtjs/tailwindcss": "^6.11.2",
+    "@pinia/nuxt": "^0.5.1",
+    "@vueuse/core": "^10.7.2",
     "crypto": "^1.0.1",
+    "pinia": "^2.1.7",
     "vue-confetti-explosion": "^1.0.2"
   }
 }

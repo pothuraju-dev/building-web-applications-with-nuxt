@@ -40,6 +40,11 @@ const apps = [
     description: '',
     url: '/apps/marvel-comics',
   },
+  {
+    name: 'Recipes',
+    description: '',
+    url: '/apps/spoonacular/home',
+  },
   // TODO: Add more apps with relevant information
 ]
 </script>
