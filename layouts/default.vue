@@ -102,6 +102,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Apps', href: '/apps' },
   { name: 'Config Apps', href: '/config' },
+  { name: 'Articles', href: '/articles' },
   {
     name: 'Github',
     href: 'https://github.com/pothuraju-dev/building-web-applications-with-nuxt',

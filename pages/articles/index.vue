@@ -8,7 +8,7 @@
       <article
         v-for="article in articles"
         :key="article.id"
-        class="flex flex-col justify-between"
+        class="flex flex-col justify-between border-b pb-5"
       >
         <div class="group relative">
           <h3
@@ -47,6 +47,12 @@ const articles = [
     description:
       'The defineModel makes it possible to define the input(s) of our component and it will also transmit any changes in the input, back to the parent component.',
     url: '/articles/define-model',
+  },
+  {
+    title: 'Unlocking the Power of Nuxt: Advanced State Management Strategies',
+    link: 'https://nuxt.com/docs/getting-started/state-management',
+    description:"In the realm of web development, efficient state management is paramount for building robust and responsive applications. Nuxt.js, with its powerful state management capabilities, offers developers a comprehensive solution to handle state in Vue.js applications seamlessly. In this blog post, we'll delve into advanced strategies for state management in Nuxt, focusing on harnessing the full potential of the useState composable.",
+    url: '/articles/global-state',
   },
   // TODO: Add more apps with relevant information
 ]

@@ -46,6 +46,12 @@ const summary = [
 </script>
 <template>
   <div>
+    <!-- Article Link -->
+    <div class="mb-8">
+      <NuxtLink to="/articles" class="text-blue-500 hover:underline"
+        >Back to Articles</NuxtLink
+      >
+    </div>
     <div role="list" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mt-2 flex rounded-md shadow-sm">
         <div class="relative flex flex-grow items-stretch focus-within:z-10">
@@ -75,6 +81,6 @@ const summary = [
         <DefineModelCounter v-model="globalCounter"></DefineModelCounter>
       </ul>
     </div>
-    <Summary :items="summary"/>
+    <Summary :items="summary" />
   </div>
 </template>
