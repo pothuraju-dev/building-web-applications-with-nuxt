@@ -3,7 +3,7 @@
     <Loaders
       type="dots"
       :is-loading="isSearching"
-      :text="Searching by '${searchQuery}'..."
+      :text="loaderMessage"
     />
     <div v-if="data && data.length > 0 && !isSearching && query">
       <div
@@ -40,6 +40,8 @@ import type { Ref } from 'vue'
 
 import type { Character } from '@/types/marvel'
 const searchQuery: Ref<string> = ref('')
+const loaderMessage: Ref<string> = computed(()=> `Searching by '${searchQuery.value}'...`)
+
 
 const isSearching: Ref<boolean> = ref(false)
 const data: Ref<Character[] | undefined> = ref()
