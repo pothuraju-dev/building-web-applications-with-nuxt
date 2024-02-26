@@ -54,6 +54,13 @@ const articles = [
     description:"In the realm of web development, efficient state management is paramount for building robust and responsive applications. Nuxt.js, with its powerful state management capabilities, offers developers a comprehensive solution to handle state in Vue.js applications seamlessly. In this blog post, we'll delve into advanced strategies for state management in Nuxt, focusing on harnessing the full potential of the useState composable.",
     url: '/articles/global-state',
   },
+  {
+    title: 'Mastering Reactivity in Vue: A Comprehensive Guide',
+    link: 'https://sri-ram-kumar.medium.com/mastering-reactivity-in-vue-a-comprehensive-guide-bd45d98dcf22',
+    description:"Understanding how to harness the power of reactive variables is crucial for building dynamic and responsive Vue applications. In this guide, we'll explore the nuances of declaring reactive state using ref and reactive, discuss the differences between reactive proxy and original values, highlight limitations of reactive(), and tackle the issue of reactivity loss in real-world scenarios.",
+    url: '/articles/reactivity-loss-in-props',
+  },
+  
   // TODO: Add more apps with relevant information
 ]
 </script>
